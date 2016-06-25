@@ -1,11 +1,11 @@
-# Todo App #
+# Todo App in Scalatra #
 
 Not completed yet...
 
 ## Build & Run ##
 
 ```sh
-$ cd Todo_App
+$ cd todo-app-in-scalatra
 $ ./sbt
 > jetty:start
 > browse
