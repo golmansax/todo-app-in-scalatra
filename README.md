@@ -1,5 +1,7 @@
 # Todo App #
 
+Not completed yet...
+
 ## Build & Run ##
 
 ```sh
