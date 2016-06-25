@@ -1,0 +1,7 @@
+-@ val todos: com.mongodb.casbah.MongoCursor
+- attributes("title") = "Todo App"
+- attributes("headline") = "My Todo App"
+
+a(href="/new-todo")= "New todo"
+- for (todo <- todos)
+  p= todo.get("name")
