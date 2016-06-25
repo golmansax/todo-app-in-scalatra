@@ -1,4 +1,16 @@
+sudo: false
 language: scala
+
+# These directories are cached to S3 at the end of the build
+cache:
+  directories:
+  - $HOME/.sbt/boot/
+
+# Finally, the following a few lines of cleanup script are added:
+before_cache:
+  # Tricks to avoid unnecessary cache updates
+  - find $HOME/.sbt -name "*.lock" -delete
+
 script:
 - sbt scalastyle
 - sbt test
