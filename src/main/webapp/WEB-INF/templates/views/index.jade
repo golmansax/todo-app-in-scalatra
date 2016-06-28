@@ -1,4 +1,6 @@
 -@ val todos: com.mongodb.casbah.MongoCursor
+- import com.golmansax.app._
+
 - attributes("title") = "Todo App"
 - attributes("headline") = "My Todo App"
 
@@ -7,7 +9,9 @@ a(href="/new-todo")= "New todo"
   div
     p= todo.get("name")
     p
-      Created
-      = todo.get("timestamp")
+      = "Created "
+      = ViewHelper.formatTimestamp(todo.get("timestamp").asInstanceOf[Long])
     button Mark Completed
-    button Remove
+    form(method="post" action="/remove-todo")
+      input(type="hidden" name="id" value={todo.get("_id")})
+      input(type="submit" value="Remove")
