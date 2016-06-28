@@ -4,4 +4,10 @@
 
 a(href="/new-todo")= "New todo"
 - for (todo <- todos)
-  p= todo.get("name")
+  div
+    p= todo.get("name")
+    p
+      Created
+      = todo.get("timestamp")
+    button Mark Completed
+    button Remove
