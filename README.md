@@ -1,7 +1,5 @@
 # Todo App in Scalatra #
 
-Not completed yet...
-
 ## Build & Run ##
 
 ```sh
