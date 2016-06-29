@@ -29,4 +29,11 @@ class TodoAppServlet(mongoColl: MongoCollection) extends TodoAppStack {
     redirect("/")
   }
 
+  post("/mark-complete") {
+    val query = MongoDBObject("_id" -> new ObjectId(params("id")))
+    val update = $set("completed" -> true)
+    mongoColl.update(query, update)
+    redirect("/")
+  }
+
 }
